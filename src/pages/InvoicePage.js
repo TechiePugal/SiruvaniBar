@@ -251,6 +251,7 @@ export default function InvoicePage({ mode='invoice' }) {
   const [saving, setSaving]   = useState(false);
   const [search, setSearch]   = useState('');
   const [viewDoc, setViewDoc] = useState(null);
+  const [payingDoc, setPayingDoc] = useState(null);
   const [inventoryItems, setInvItems] = useState([]);
 
   const emptyForm = () => ({
