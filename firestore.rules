@@ -1,0 +1,39 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper functions
+    function isAuth() { return request.auth != null; }
+    function isOwner(shopId) {
+      return isAuth() && get(/databases/$(database)/documents/shops/$(shopId)).data.ownerId == request.auth.uid;
+    }
+    function isMember(shopId) {
+      return isAuth() && request.auth.token.email in get(/databases/$(database)/documents/shops/$(shopId)).data.get('memberEmails', []);
+    }
+    function canAccessShop(shopId) { return isOwner(shopId) || isMember(shopId); }
+    function isSuperAdmin() {
+      return isAuth() && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.get('role', '') == 'superadmin';
+    }
+
+    // Users — own profile
+    match /users/{userId} {
+      allow read: if isAuth() && (request.auth.uid == userId || isSuperAdmin());
+      allow write: if isAuth() && request.auth.uid == userId;
+      allow create: if isAuth();
+    }
+
+    // Shops
+    match /shops/{shopId} {
+      allow read:   if isAuth() && (isSuperAdmin() || canAccessShop(shopId));
+      allow create: if isAuth();
+      allow update: if isAuth() && (isSuperAdmin() || isOwner(shopId) || isMember(shopId));
+      allow delete: if isAuth() && (isSuperAdmin() || isOwner(shopId));
+
+      // All subcollections
+      match /{sub}/{docId} {
+        allow read:   if isAuth() && (isSuperAdmin() || canAccessShop(shopId));
+        allow write:  if isAuth() && (isSuperAdmin() || canAccessShop(shopId));
+      }
+    }
+  }
+}
