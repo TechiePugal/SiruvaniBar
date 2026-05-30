@@ -88,7 +88,7 @@ export default function DayEndPage() {
   return (
     <div className="page-container fade-in">
       <div style={{marginBottom:24}}>
-        <h1 style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Day End Reconciliation</h1>
+        <h1 style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Day End Reconciliation</h1>
         <p style={{color:'#64748b',fontSize:14,margin:'3px 0 0'}}>Lock the day's cash and digital payments</p>
       </div>
 
@@ -111,7 +111,7 @@ export default function DayEndPage() {
                 <div style={{fontSize:11.5,fontWeight:700,color:'#64748b',textTransform:'uppercase',letterSpacing:'0.05em'}}>{k.label}</div>
                 <div style={{fontSize:20}}>{k.icon}</div>
               </div>
-              <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:24,color:k.color}}>{fmt(k.value)}</div>
+              <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:24,color:k.color}}>{fmt(k.value)}</div>
               <div style={{fontSize:12,color:'#94a3b8',marginTop:2}}>{todaySales.count} bill{todaySales.count!==1?'s':''} today</div>
             </div>
           ))}
@@ -122,7 +122,7 @@ export default function DayEndPage() {
         <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:20,marginBottom:24}}>
           {/* Cash reconciliation */}
           <div style={{background:'#fff',borderRadius:18,border:'1.5px solid #e2e8f0',padding:'24px',boxShadow:'0 2px 10px rgba(15,23,42,0.05)'}}>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:17,color:'#0f172a',marginBottom:18,display:'flex',alignItems:'center',gap:8}}>💵 Cash Drawer</div>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:17,color:'#0f172a',marginBottom:18,display:'flex',alignItems:'center',gap:8}}>💵 Cash Drawer</div>
             <div style={{display:'flex',flexDirection:'column',gap:14}}>
               <div className="form-group">
                 <label className="form-label">Opening Cash (₹)</label>
@@ -143,7 +143,7 @@ export default function DayEndPage() {
 
           {/* Digital reconciliation */}
           <div style={{background:'#fff',borderRadius:18,border:'1.5px solid #e2e8f0',padding:'24px',boxShadow:'0 2px 10px rgba(15,23,42,0.05)'}}>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:17,color:'#0f172a',marginBottom:18}}>📱 Digital Payments</div>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:17,color:'#0f172a',marginBottom:18}}>📱 Digital Payments</div>
             <div style={{display:'flex',flexDirection:'column',gap:14}}>
               <div>
                 <div style={{fontSize:12,color:'#64748b',fontWeight:600,marginBottom:6}}>GPay / UPI QR (Primary)</div>
@@ -191,7 +191,7 @@ export default function DayEndPage() {
       {/* History */}
       {records.length>0 && (
         <div style={{marginTop:32}}>
-          <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:17,color:'#0f172a',marginBottom:16}}>📋 Recent Day Ends</div>
+          <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:17,color:'#0f172a',marginBottom:16}}>📋 Recent Day Ends</div>
           <div style={{background:'#fff',borderRadius:18,border:'1.5px solid #e2e8f0',overflow:'hidden'}}>
             <table style={{width:'100%',borderCollapse:'collapse'}}>
               <thead>

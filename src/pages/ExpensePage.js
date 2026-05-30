@@ -79,7 +79,7 @@ export default function ExpensePage() {
     <div className="page-container fade-in">
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:24,flexWrap:'wrap',gap:12}}>
         <div>
-          <h1 style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Expenses</h1>
+          <h1 style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Expenses</h1>
           <p style={{color:'#64748b',fontSize:14,margin:'3px 0 0'}}>Track all operating expenses</p>
         </div>
         <button className="btn-primary" onClick={()=>setShowForm(true)} style={{display:'flex',alignItems:'center',gap:8}}>
@@ -91,7 +91,7 @@ export default function ExpensePage() {
       <div style={{display:'flex',gap:12,marginBottom:20,flexWrap:'wrap',alignItems:'center'}}>
         <div style={{background:'linear-gradient(135deg,#dc2626,#ef4444)',borderRadius:14,padding:'14px 22px',color:'#fff',minWidth:180}}>
           <div style={{fontSize:11.5,fontWeight:700,textTransform:'uppercase',opacity:0.8,marginBottom:4}}>Total Showing</div>
-          <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:24}}>{fmt(total)}</div>
+          <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:24}}>{fmt(total)}</div>
           <div style={{fontSize:11,opacity:0.7,marginTop:2}}>{filtered.length} entries</div>
         </div>
         <div style={{display:'flex',gap:6,flexWrap:'wrap'}}>
@@ -105,12 +105,13 @@ export default function ExpensePage() {
       : filtered.length===0 ? (
         <div style={{textAlign:'center',padding:'60px 20px',background:'#fff',borderRadius:20,border:'1.5px dashed #e2e8f0'}}>
           <div style={{fontSize:48,marginBottom:12,opacity:0.3}}>💸</div>
-          <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:18,color:'#475569',marginBottom:8}}>No expenses yet</div>
+          <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:18,color:'#475569',marginBottom:8}}>No expenses yet</div>
           <button className="btn-primary" onClick={()=>setShowForm(true)} style={{display:'inline-flex',alignItems:'center',gap:8,marginTop:4}}><Plus size={15}/>Add First Expense</button>
         </div>
       ) : (
         <div style={{background:'#fff',borderRadius:18,border:'1.5px solid #e2e8f0',overflow:'hidden',boxShadow:'0 2px 10px rgba(15,23,42,0.05)'}}>
-          <table style={{width:'100%',borderCollapse:'collapse'}}>
+          <div className="table-wrap">
+          <table style={{width:'100%',borderCollapse:'collapse',minWidth:560}}>
             <thead>
               <tr style={{background:'#f8faff'}}>
                 {['Date','Category','Sub-Category','Amount','Payment','Paid To','Notes',''].map(h=>(
@@ -144,15 +145,16 @@ export default function ExpensePage() {
               ))}
             </tbody>
           </table>
+          </div>
         </div>
       )}
 
       {/* Form Modal */}
       {showForm && (
         <div className="modal-overlay" onClick={()=>setShowForm(false)}>
-          <div onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:500,boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
+          <div className="modal" onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:500,boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
             <div style={{padding:'22px 26px',borderBottom:'1px solid #e2e8f0',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-              <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:20,color:'#0f172a'}}>{editId?'✏️ Edit Expense':'💸 Add Expense'}</div>
+              <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:20,color:'#0f172a'}}>{editId?'✏️ Edit Expense':'💸 Add Expense'}</div>
               <button onClick={()=>{setShowForm(false);setEditId(null);}} style={{width:32,height:32,borderRadius:'50%',border:'1.5px solid #e2e8f0',background:'#f8fafc',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',color:'#64748b',fontSize:18}}>✕</button>
             </div>
             <div style={{padding:'22px 26px',display:'flex',flexDirection:'column',gap:14}}>

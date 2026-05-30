@@ -105,7 +105,7 @@ function ItemSearch({ value, inventoryItems, freeItems, onSelect }) {
           onFocus={()=>setOpen(true)}
           onBlur={()=>setTimeout(()=>setOpen(false),200)}
           placeholder="Type item name…"
-          style={{width:'100%',padding:'8px 10px 8px 28px',border:'1.5px solid #e2e8f0',borderRadius:9,fontSize:13,outline:'none',background:'#fff',color:'#0f172a',fontFamily:'DM Sans,sans-serif'}}
+          style={{width:'100%',padding:'8px 10px 8px 28px',border:'1.5px solid #e2e8f0',borderRadius:9,fontSize:13,outline:'none',background:'#fff',color:'#0f172a',fontFamily:'Inter,sans-serif'}}
         />
       </div>
       {open && (q.trim() || invFiltered.length>0) && (
@@ -414,7 +414,7 @@ export default function InvoicePage({ mode='invoice' }) {
       {/* Header */}
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:20,flexWrap:'wrap',gap:12}}>
         <div>
-          <h1 style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>
+          <h1 style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>
             {isQuo?'💬 Quotations':'🧾 Sales Invoices'}
           </h1>
           <p style={{color:'#64748b',fontSize:14,margin:'3px 0 0'}}>
@@ -438,7 +438,7 @@ export default function InvoicePage({ mode='invoice' }) {
             <div style={{display:'flex',justifyContent:'space-between',marginBottom:8}}>
               <div style={{fontSize:11,fontWeight:700,color:'#64748b',textTransform:'uppercase',letterSpacing:'0.05em'}}>{k.icon} {k.label}</div>
             </div>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:22,color:k.color}}>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:22,color:k.color}}>
               {k.isCnt ? k.val : money(k.val)}
             </div>
           </div>
@@ -456,7 +456,7 @@ export default function InvoicePage({ mode='invoice' }) {
       : filtered.length===0 ? (
         <div style={{textAlign:'center',padding:'60px 20px',background:'#fff',borderRadius:20,border:'1.5px dashed #e2e8f0'}}>
           <div style={{fontSize:56,opacity:0.2,marginBottom:14}}>{isQuo?'💬':'🧾'}</div>
-          <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:18,color:'#475569',marginBottom:8}}>{search?`No results for "${search}"`:`No ${isQuo?'quotations':'invoices'} yet`}</div>
+          <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:18,color:'#475569',marginBottom:8}}>{search?`No results for "${search}"`:`No ${isQuo?'quotations':'invoices'} yet`}</div>
           <button className="btn-primary" onClick={()=>setShowForm(true)} style={{display:'inline-flex',alignItems:'center',gap:8,marginTop:4}}><Plus size={14}/>Create First</button>
         </div>
       ) : (
@@ -523,11 +523,11 @@ export default function InvoicePage({ mode='invoice' }) {
       {/* ── Form modal ── */}
       {showForm&&(
         <div className="modal-overlay" onClick={()=>setShowForm(false)}>
-          <div onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:820,maxHeight:'95vh',overflowY:'auto',boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
+          <div className="modal" onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:820,maxHeight:'95vh',overflowY:'auto',boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
             {/* Sticky header */}
             <div style={{padding:'18px 24px',borderBottom:'1px solid #e2e8f0',display:'flex',alignItems:'center',justifyContent:'space-between',position:'sticky',top:0,background:'#fff',zIndex:10}}>
               <div>
-                <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:19,color:'#0f172a'}}>
+                <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:19,color:'#0f172a'}}>
                   {editDocId?(isQuo?'✏️ Edit Quotation':'✏️ Edit Invoice'):(isQuo?'💬 New Quotation':'🧾 New Invoice')}
                 </div>
                 <div style={{fontSize:12,color:'#64748b',marginTop:2}}>
@@ -570,7 +570,7 @@ export default function InvoicePage({ mode='invoice' }) {
               </div>
 
               {/* Customer */}
-              <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12,padding:'12px 14px',background:'#f8faff',borderRadius:12,border:'1.5px solid #e0e7ff',marginBottom:18}}>
+              <div className="grid-2-collapse" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:12,padding:'12px 14px',background:'#f8faff',borderRadius:12,border:'1.5px solid #e0e7ff',marginBottom:18}}>
                 <div className="form-group" style={{margin:0}}>
                   <label className="form-label">Customer Name (optional)</label>
                   <input className="form-input" value={form.customerName} onChange={e=>setForm(f=>({...f,customerName:e.target.value}))} placeholder="Walk-in / customer name"/>
@@ -609,7 +609,7 @@ export default function InvoicePage({ mode='invoice' }) {
               </div>
 
               {/* Totals + notes */}
-              <div style={{display:'grid',gridTemplateColumns:'1fr 260px',gap:16}}>
+              <div className="grid-2-collapse" style={{display:'grid',gridTemplateColumns:'1fr 260px',gap:16}}>
                 <div className="form-group">
                   <label className="form-label">Notes / Terms</label>
                   <textarea className="form-input" rows={3} value={form.notes} onChange={e=>setForm(f=>({...f,notes:e.target.value}))} placeholder={isQuo?"Validity, delivery terms…":"Payment terms, bank details…"} style={{resize:'vertical'}}/>

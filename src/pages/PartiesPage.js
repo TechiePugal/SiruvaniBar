@@ -47,10 +47,10 @@ function PartyLedger({ party, shopId, onClose }) {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:620,maxHeight:'90vh',overflowY:'auto',boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
+      <div className="modal" onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:620,maxHeight:'90vh',overflowY:'auto',boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
         <div style={{padding:'20px 24px',borderBottom:'1px solid #e2e8f0',display:'flex',justifyContent:'space-between',alignItems:'center',position:'sticky',top:0,background:'#fff',zIndex:10}}>
           <div>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:18,color:'#0f172a'}}>{party.name}</div>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:18,color:'#0f172a'}}>{party.name}</div>
             <div style={{fontSize:13,color:'#64748b',marginTop:1}}>{party.type==='customer'?'Customer':'Vendor'} Ledger</div>
           </div>
           <button onClick={onClose} style={{width:32,height:32,borderRadius:'50%',border:'1.5px solid #e2e8f0',background:'#f8fafc',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',color:'#64748b',fontSize:18}}>✕</button>
@@ -73,7 +73,7 @@ function PartyLedger({ party, shopId, onClose }) {
           }.map(k=>(
             <div key={k.label} style={{textAlign:'center',padding:'10px',background:'#f8faff',borderRadius:12,border:'1px solid #e0e7ff'}}>
               <div style={{fontSize:11,color:'#64748b',fontWeight:700,textTransform:'uppercase',marginBottom:4}}>{k.label}</div>
-              <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:17,color:k.color}}>{money(k.val)}</div>
+              <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:17,color:k.color}}>{money(k.val)}</div>
             </div>
           ))}
         </div>
@@ -188,7 +188,7 @@ export default function PartiesPage() {
       {/* Header */}
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:24,flexWrap:'wrap',gap:12}}>
         <div>
-          <h1 style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Parties</h1>
+          <h1 style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Parties</h1>
           <p style={{color:'#64748b',fontSize:14,margin:'3px 0 0'}}>Customers & Vendors — ledger, balances, statements</p>
         </div>
         <button className="btn-primary" onClick={()=>{setEditId(null);setForm(emptyForm());setShowForm(true);}} style={{display:'flex',alignItems:'center',gap:8}}>
@@ -209,7 +209,7 @@ export default function PartiesPage() {
               <div style={{fontSize:11,fontWeight:700,color:'#64748b',textTransform:'uppercase',letterSpacing:'0.05em'}}>{k.label}</div>
               <div style={{fontSize:20}}>{k.icon}</div>
             </div>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:22,color:k.color}}>{k.isCnt?k.val:money(k.val)}</div>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:22,color:k.color}}>{k.isCnt?k.val:money(k.val)}</div>
           </div>
         ))}
       </div>
@@ -234,7 +234,7 @@ export default function PartiesPage() {
       : filtered.length===0 ? (
         <div style={{textAlign:'center',padding:'60px 20px',background:'#fff',borderRadius:20,border:'1.5px dashed #e2e8f0'}}>
           <div style={{fontSize:56,marginBottom:14,opacity:0.25}}>👥</div>
-          <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:18,color:'#475569',marginBottom:8}}>{search?`No results for "${search}"`:'No parties yet'}</div>
+          <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:18,color:'#475569',marginBottom:8}}>{search?`No results for "${search}"`:'No parties yet'}</div>
           <button className="btn-primary" onClick={()=>setShowForm(true)} style={{display:'inline-flex',alignItems:'center',gap:8,marginTop:4}}><Plus size={14}/>Add Party</button>
         </div>
       ) : (
@@ -261,7 +261,7 @@ export default function PartiesPage() {
                       </div>
                     </div>
                     {bal>0&&<div style={{textAlign:'right',flexShrink:0}}>
-                      <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:15,color:isC?'#059669':'#dc2626'}}>{money(bal)}</div>
+                      <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:15,color:isC?'#059669':'#dc2626'}}>{money(bal)}</div>
                       <div style={{fontSize:10,color:'#94a3b8',fontWeight:600}}>{isC?'RECEIVABLE':'BALANCE DUE'}</div>
                     </div>}
                   </div>
@@ -288,9 +288,9 @@ export default function PartiesPage() {
       {/* Add/Edit modal */}
       {showForm&&(
         <div className="modal-overlay" onClick={()=>setShowForm(false)}>
-          <div onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:520,maxHeight:'92vh',overflowY:'auto',boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
+          <div className="modal" onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:520,maxHeight:'92vh',overflowY:'auto',boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
             <div style={{padding:'20px 24px',borderBottom:'1px solid #e2e8f0',display:'flex',justifyContent:'space-between',alignItems:'center',position:'sticky',top:0,background:'#fff',zIndex:10}}>
-              <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:19,color:'#0f172a'}}>{editId?'✏️ Edit Party':'👥 Add Party'}</div>
+              <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:19,color:'#0f172a'}}>{editId?'✏️ Edit Party':'👥 Add Party'}</div>
               <button onClick={()=>setShowForm(false)} style={{width:32,height:32,borderRadius:'50%',border:'1.5px solid #e2e8f0',background:'#f8fafc',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',color:'#64748b',fontSize:18}}>✕</button>
             </div>
             <div style={{padding:'20px 24px',display:'flex',flexDirection:'column',gap:14}}>

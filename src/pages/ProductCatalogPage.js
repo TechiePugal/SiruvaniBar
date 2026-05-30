@@ -128,7 +128,7 @@ export default function ProductCatalogPage() {
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24 }}>
         <div>
-          <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 26, color: 'var(--text-primary)', margin: 0 }}>Product Catalog</h1>
+          <h1 style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 700, fontSize: 26, color: 'var(--text-primary)', margin: 0 }}>Product Catalog</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: '4px 0 0' }}>{products.length} items · used in billing search</p>
         </div>
         {canEdit && (
@@ -190,7 +190,7 @@ export default function ProductCatalogPage() {
                   {p.description && <div style={{ fontSize: 12, color: 'var(--text-muted)', marginBottom: 8, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{p.description}</div>}
                   <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div>
-                      <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 20, color: 'var(--gold)' }}>
+                      <div style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 800, fontSize: 20, color: 'var(--gold)' }}>
                         ₹{p.price.toLocaleString('en-IN')}
                       </div>
                       {p.gstEnabled && (

@@ -319,7 +319,7 @@ export default function BillingPage() {
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
         <div>
-          <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 26, color: 'var(--text-primary)', margin: 0 }}>Billing</h1>
+          <h1 style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 700, fontSize: 26, color: 'var(--text-primary)', margin: 0 }}>Billing</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: '4px 0 0' }}>{format(new Date(date), 'EEEE, d MMM yyyy')}</p>
         </div>
         <div style={{ display: 'flex', gap: 4, background: 'var(--surface)', borderRadius: 10, padding: 3, border: '1px solid var(--border)' }}>
@@ -608,7 +608,7 @@ export default function BillingPage() {
                 <div style={{ background: 'rgba(212,160,23,0.08)', padding: '20px 24px', borderBottom: '1px solid var(--border)' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start' }}>
                     <div>
-                      <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 20, color: 'var(--text-primary)' }}>🍺 {selectedShop.name}</div>
+                      <div style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 800, fontSize: 20, color: 'var(--text-primary)' }}>🍺 {selectedShop.name}</div>
                       {selectedShop.address && <div style={{ fontSize: 12, color: 'var(--text-secondary)', marginTop: 2 }}>{selectedShop.address}</div>}
                       {selectedShop.phone && <div style={{ fontSize: 12, color: 'var(--text-secondary)' }}>📞 {selectedShop.phone}</div>}
                     </div>

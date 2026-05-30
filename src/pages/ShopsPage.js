@@ -56,7 +56,7 @@ export default function ShopsPage() {
     <div className="page-container fade-in">
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:28,flexWrap:'wrap',gap:12}}>
         <div>
-          <h1 style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Manage Shops</h1>
+          <h1 style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Manage Shops</h1>
           <p style={{color:'#64748b',fontSize:14,margin:'3px 0 0'}}>{userShops.length} shop{userShops.length!==1?'s':''} total</p>
         </div>
         {isSuperAdmin && <button className="btn-primary" onClick={()=>{setEditShop(null);setForm({name:'',address:'',phone:'',gstNumber:'',fssaiNumber:'',type:'bar'});setShowModal(true);}} style={{display:'flex',alignItems:'center',gap:8}}>
@@ -67,7 +67,7 @@ export default function ShopsPage() {
       {userShops.length===0 ? (
         <div style={{textAlign:'center',padding:'80px 20px',background:'#fff',borderRadius:20,border:'1.5px dashed #e2e8f0'}}>
           <div style={{fontSize:56,marginBottom:16,opacity:0.3}}>🏪</div>
-          <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:20,color:'#475569',marginBottom:10}}>No shops yet</div>
+          <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:20,color:'#475569',marginBottom:10}}>No shops yet</div>
           <button className="btn-primary" onClick={()=>setShowModal(true)} style={{display:'inline-flex',alignItems:'center',gap:8}}><Plus size={15}/>Create Your First Shop</button>
         </div>
       ) : (
@@ -81,7 +81,7 @@ export default function ShopsPage() {
                 <div style={{padding:'20px 22px'}}>
                   <div style={{display:'flex',justifyContent:'space-between',alignItems:'flex-start',marginBottom:12}}>
                     <div>
-                      <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:18,color:'#0f172a',marginBottom:4}}>{shop.name}</div>
+                      <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:18,color:'#0f172a',marginBottom:4}}>{shop.name}</div>
                       <span style={{padding:'3px 10px',borderRadius:20,fontSize:11.5,fontWeight:600,background:'#eff6ff',color:'#2563eb',border:'1px solid #bfdbfe',textTransform:'capitalize'}}>{shop.type?.replace('_',' ')||'Bar'}</span>
                     </div>
                     {isOwner ? <span style={{display:'flex',alignItems:'center',gap:4,padding:'4px 10px',borderRadius:20,background:'#fffbeb',color:'#d97706',border:'1px solid #fde68a',fontSize:12,fontWeight:700}}><Crown size={12}/>Owner</span>
@@ -112,9 +112,9 @@ export default function ShopsPage() {
 
       {showModal && (
         <div className="modal-overlay" onClick={()=>setShowModal(false)}>
-          <div onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:480,boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
+          <div className="modal" onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:480,boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
             <div style={{padding:'22px 26px',borderBottom:'1px solid #e2e8f0',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-              <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:20,color:'#0f172a'}}>{editShop?'✏️ Edit Shop':'🏪 New Shop'}</div>
+              <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:20,color:'#0f172a'}}>{editShop?'✏️ Edit Shop':'🏪 New Shop'}</div>
               <button onClick={()=>setShowModal(false)} style={{width:32,height:32,borderRadius:'50%',border:'1.5px solid #e2e8f0',background:'#f8fafc',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',color:'#64748b',fontSize:18}}>✕</button>
             </div>
             <div style={{padding:'22px 26px',display:'flex',flexDirection:'column',gap:14}}>

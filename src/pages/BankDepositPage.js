@@ -93,7 +93,7 @@ export default function BankDepositPage() {
     <div className="page-container">
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 28 }}>
         <div>
-          <h1 style={{ fontSize: 26, fontFamily: 'Syne, sans-serif', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>
+          <h1 style={{ fontSize: 26, fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>
             Bank Deposits
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: '4px 0 0' }}>Track cash & DD deposits to bank</p>
@@ -116,7 +116,7 @@ export default function BankDepositPage() {
             </div>
             <div>
               <div style={{ fontSize: 11, color: 'var(--text-secondary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>{k.label}</div>
-              <div style={{ fontSize: 22, fontWeight: 700, color: 'var(--text-primary)', fontFamily: 'Syne, sans-serif' }}>₹{k.value.toLocaleString()}</div>
+              <div style={{ fontSize: 22, fontWeight: 700, color: 'var(--text-primary)', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>₹{k.value.toLocaleString()}</div>
             </div>
           </div>
         ))}

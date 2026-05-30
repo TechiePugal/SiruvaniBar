@@ -176,7 +176,7 @@ export default function StaffPage() {
       {/* Header */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 28 }}>
         <div>
-          <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 28, color: '#0f172a', margin: 0 }}>Staff & Accounts</h1>
+          <h1 style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 800, fontSize: 28, color: '#0f172a', margin: 0 }}>Staff & Accounts</h1>
           <p style={{ color: '#64748b', fontSize: 14, margin: '4px 0 0' }}>Create logins, assign shops, manage page access</p>
         </div>
       </div>
@@ -200,7 +200,7 @@ export default function StaffPage() {
                 <UserPlus size={20} color="#2563eb" />
               </div>
               <div>
-                <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 18, color: '#0f172a' }}>New Restaurant Login</div>
+                <div style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 700, fontSize: 18, color: '#0f172a' }}>New Restaurant Login</div>
                 <div style={{ fontSize: 13, color: '#64748b' }}>Creates a Firebase account for this user</div>
               </div>
             </div>
@@ -247,7 +247,7 @@ export default function StaffPage() {
 
           {/* Page Permissions for new user */}
           <div style={{ background: '#fff', borderRadius: 20, border: '1.5px solid #e2e8f0', padding: '28px', boxShadow: '0 2px 12px rgba(15,23,42,0.07)' }}>
-            <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 17, color: '#0f172a', marginBottom: 5 }}>🔐 Page Access Rights</div>
+            <div style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 700, fontSize: 17, color: '#0f172a', marginBottom: 5 }}>🔐 Page Access Rights</div>
             <p style={{ color: '#64748b', fontSize: 13, marginBottom: 18 }}>Choose which pages this user can access</p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 7 }}>
               {ALL_PAGES.map(page => {

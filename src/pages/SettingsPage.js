@@ -135,7 +135,7 @@ export default function SettingsPage() {
     <div className="page-container">
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 28 }}>
         <div>
-          <h1 style={{ fontSize: 26, fontFamily: 'Syne, sans-serif', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>
+          <h1 style={{ fontSize: 26, fontFamily: 'Plus Jakarta Sans, sans-serif', fontWeight: 700, color: 'var(--text-primary)', margin: 0 }}>
             Settings
           </h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: '4px 0 0' }}>
@@ -190,7 +190,7 @@ export default function SettingsPage() {
           {/* ── LEASE MODE ── */}
           {activeSection === 'lease' && (
             <div>
-              <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px', fontFamily: 'Syne, sans-serif' }}>Lease Mode</h2>
+              <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>Lease Mode</h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: 13, margin: '0 0 28px' }}>
                 When enabled, kitchen & food categories are hidden and daily lease income is auto-applied.
               </p>
@@ -254,7 +254,7 @@ export default function SettingsPage() {
           {/* ── SHOP DETAILS ── */}
           {activeSection === 'shop' && (
             <div>
-              <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px', fontFamily: 'Syne, sans-serif' }}>Shop Details</h2>
+              <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>Shop Details</h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: 13, margin: '0 0 28px' }}>Basic information about this outlet</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
                 <div className="form-group">
@@ -293,7 +293,7 @@ export default function SettingsPage() {
           {/* ── OPERATIONS ── */}
           {activeSection === 'operations' && (
             <div>
-              <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px', fontFamily: 'Syne, sans-serif' }}>Operations</h2>
+              <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>Operations</h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: 13, margin: '0 0 28px' }}>Business hours and operational settings</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
                 <div className="form-group">
@@ -311,7 +311,7 @@ export default function SettingsPage() {
           {/* ── BILLING & TAX ── */}
           {activeSection === 'billing' && (
             <div>
-              <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px', fontFamily: 'Syne, sans-serif' }}>Billing & Tax</h2>
+              <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>Billing & Tax</h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: 13, margin: '0 0 28px' }}>Configure tax rates and billing defaults</p>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 18 }}>
                 <div className="form-group">
@@ -344,7 +344,7 @@ export default function SettingsPage() {
           {/* ── NOTIFICATIONS ── */}
           {activeSection === 'notifications' && (
             <div>
-              <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px', fontFamily: 'Syne, sans-serif' }}>Notifications</h2>
+              <h2 style={{ fontSize: 18, fontWeight: 700, color: 'var(--text-primary)', margin: '0 0 6px', fontFamily: 'Plus Jakarta Sans, sans-serif' }}>Notifications</h2>
               <p style={{ color: 'var(--text-secondary)', fontSize: 13, margin: '0 0 28px' }}>Configure alerts and reminders</p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
                 {[

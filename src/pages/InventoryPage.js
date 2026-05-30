@@ -172,7 +172,7 @@ export default function InventoryPage() {
       {/* ── Header ── */}
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 24, flexWrap: 'wrap', gap: 12 }}>
         <div>
-          <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 28, color: '#0f172a', margin: 0 }}>Inventory</h1>
+          <h1 style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 800, fontSize: 28, color: '#0f172a', margin: 0 }}>Inventory</h1>
           <p style={{ color: '#64748b', fontSize: 14, margin: '3px 0 0' }}>Item-wise stock tracking, COGS & purchase management</p>
         </div>
         <button className="btn-primary" onClick={() => { setEditItemId(null); setItemForm(emptyItem()); setShowItemForm(true); }}
@@ -194,7 +194,7 @@ export default function InventoryPage() {
               <div style={{ width: 38, height: 38, borderRadius: 10, background: k.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18 }}>{k.icon}</div>
               <div style={{ fontSize: 11.5, color: '#64748b', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>{k.label}</div>
             </div>
-            <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 24, color: k.color }}>
+            <div style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 800, fontSize: 24, color: k.color }}>
               {k.isCnt ? k.value : fmt(k.value)}
             </div>
           </div>
@@ -233,7 +233,7 @@ export default function InventoryPage() {
           ) : filtered.length === 0 ? (
             <div style={{ textAlign: 'center', padding: '60px 20px', background: '#fff', borderRadius: 20, border: '1.5px dashed #e2e8f0' }}>
               <div style={{ fontSize: 56, marginBottom: 16, opacity: 0.3 }}>📦</div>
-              <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 18, color: '#475569', marginBottom: 8 }}>
+              <div style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 700, fontSize: 18, color: '#475569', marginBottom: 8 }}>
                 {search ? `No items match "${search}"` : 'No items yet'}
               </div>
               <p style={{ color: '#94a3b8', fontSize: 14, marginBottom: 20 }}>Add your first inventory item to get started</p>
@@ -283,7 +283,7 @@ export default function InventoryPage() {
                     <div style={{ padding: '0 18px 12px' }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 6 }}>
                         <span style={{ fontSize: 12, color: '#64748b', fontWeight: 600 }}>Current Stock</span>
-                        <span style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 22, color: isOut ? '#dc2626' : isLow ? '#d97706' : '#059669' }}>
+                        <span style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 800, fontSize: 22, color: isOut ? '#dc2626' : isLow ? '#d97706' : '#059669' }}>
                           {item.currentStock || 0}
                           <span style={{ fontSize: 12, fontWeight: 500, color: '#94a3b8', marginLeft: 4 }}>{item.unit}</span>
                         </span>
@@ -398,7 +398,7 @@ function ItemFormModal({ editItemId, form, setForm, onSave, onClose, saving, upl
         {/* Header */}
         <div style={{ padding: '24px 28px 0', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #e2e8f0', paddingBottom: 20, marginBottom: 0 }}>
           <div>
-            <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 20, color: '#0f172a' }}>
+            <div style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 800, fontSize: 20, color: '#0f172a' }}>
               {editItemId ? '✏️ Edit Item' : '➕ Add New Item'}
             </div>
             <div style={{ fontSize: 13, color: '#64748b', marginTop: 2 }}>Fill details to track this item in inventory</div>
@@ -623,7 +623,7 @@ function UpdateStockModal({ item, shopId, onClose }) {
               {item.photoURL ? <img src={item.photoURL} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover' }} /> : <span style={{ fontSize: 26 }}>{cat.emoji}</span>}
             </div>
             <div style={{ flex: 1 }}>
-              <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 17, color: '#0f172a' }}>{item.name}</div>
+              <div style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 800, fontSize: 17, color: '#0f172a' }}>{item.name}</div>
               <div style={{ fontSize: 13, color: '#64748b', marginTop: 2 }}>
                 Current: <strong style={{ color: '#0f172a' }}>{item.currentStock || 0} {item.unit}</strong> · Purchase: <strong style={{ color: '#dc2626' }}>{fmt(item.purchasePrice, 2)}</strong>
               </div>
@@ -688,7 +688,7 @@ function UpdateStockModal({ item, shopId, onClose }) {
             <div style={{ padding: '12px 16px', borderRadius: 12, background: newStock < 0 ? '#fef2f2' : '#f0fdf4', border: `1.5px solid ${newStock < 0 ? '#fecaca' : '#bbf7d0'}`, marginBottom: 16, display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
               <div>
                 <div style={{ fontSize: 12, color: '#64748b', fontWeight: 600 }}>After this transaction</div>
-                <div style={{ fontSize: 20, fontWeight: 800, color: newStock < 0 ? '#dc2626' : '#059669', fontFamily: 'Syne,sans-serif' }}>
+                <div style={{ fontSize: 20, fontWeight: 800, color: newStock < 0 ? '#dc2626' : '#059669', fontFamily: 'Plus Jakarta Sans,sans-serif' }}>
                   {Math.max(0, newStock)} {item.unit}
                 </div>
               </div>
@@ -840,7 +840,7 @@ function StockEntryTab({ shopId, items }) {
             <tfoot>
               <tr style={{ background: '#f8faff', borderTop: '2px solid #e2e8f0' }}>
                 <td colSpan={4} style={{ padding: '12px 14px', fontWeight: 700, color: '#475569' }}>Total COGS for the day</td>
-                <td style={{ padding: '12px 14px', fontWeight: 900, color: '#dc2626', fontSize: 16, fontFamily: 'Syne,sans-serif' }}>
+                <td style={{ padding: '12px 14px', fontWeight: 900, color: '#dc2626', fontSize: 16, fontFamily: 'Plus Jakarta Sans,sans-serif' }}>
                   {fmt(totalCogs)}
                 </td>
                 <td />
@@ -976,14 +976,14 @@ function ReportsTab({ items, entries }) {
           <div key={k.label} style={{ background: '#fff', borderRadius: 16, padding: '18px 20px', border: '1.5px solid #e2e8f0', boxShadow: '0 2px 8px rgba(15,23,42,0.05)' }}>
             <div style={{ width: 38, height: 38, borderRadius: 10, background: k.bg, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 18, marginBottom: 10 }}>{k.icon}</div>
             <div style={{ fontSize: 11.5, color: '#64748b', textTransform: 'uppercase', letterSpacing: '0.05em', fontWeight: 600, marginBottom: 4 }}>{k.label}</div>
-            <div style={{ fontFamily: 'Syne,sans-serif', fontWeight: 800, fontSize: 22, color: k.color }}>{fmt(k.val)}</div>
+            <div style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 800, fontSize: 22, color: k.color }}>{fmt(k.val)}</div>
           </div>
         ))}
       </div>
 
       {/* Item-wise stock table */}
       <div style={{ background: '#fff', borderRadius: 18, border: '1.5px solid #e2e8f0', overflow: 'hidden' }}>
-        <div style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 16, color: '#0f172a' }}>
+        <div style={{ padding: '16px 20px', borderBottom: '1px solid #e2e8f0', fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 700, fontSize: 16, color: '#0f172a' }}>
           📦 Current Stock Levels
         </div>
         <table style={{ width: '100%', borderCollapse: 'collapse' }}>

@@ -543,7 +543,7 @@ ${data.invItems.map((it,i)=>{const isLow=(it.currentStock||0)<=(it.minStock||5);
               </div>
             )}
             {/* Category + payment charts */}
-            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,marginBottom:20}}>
+            <div className="chart-row" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,marginBottom:20}}>
               {data.catData.length>0&&(
                 <div style={{background:'#fff',borderRadius:18,border:'1px solid #e5e7eb',padding:'20px',boxShadow:'0 1px 4px rgba(13,27,46,0.05)'}}>
                   <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:15,color:'#0d1b2e',marginBottom:16}}>By Category</div>
@@ -687,7 +687,7 @@ ${data.invItems.map((it,i)=>{const isLow=(it.currentStock||0)<=(it.minStock||5);
         {/* ════════════ GROWTH ════════════ */}
         {tab==='growth' && (
           <div>
-            <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,marginBottom:22}}>
+            <div className="chart-row" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,marginBottom:22}}>
               {[{label:'Revenue Growth',val:data.growthRevenue,pos:parseFloat(data.growthRevenue||0)>=0,icon:'📈',prev:data.prevRev,curr:data.totalRevenue},
                 {label:'Expense Change',val:data.growthExpenses,pos:parseFloat(data.growthExpenses||0)<=0,icon:'📉',prev:data.prevExp,curr:data.totalExpenses}].map(k=>(
                 <div key={k.label} style={{background:'#fff',borderRadius:18,border:'1px solid #e5e7eb',padding:'24px',boxShadow:'0 1px 4px rgba(13,27,46,0.05)'}}>

@@ -102,7 +102,7 @@ export default function PaymentMethodsPage() {
     <div className="page-container fade-in">
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:24,flexWrap:'wrap',gap:12}}>
         <div>
-          <h1 style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Payment Methods</h1>
+          <h1 style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Payment Methods</h1>
           <p style={{color:'#64748b',fontSize:14,margin:'3px 0 0'}}>Define all payment modes used across billing, invoices & purchases</p>
         </div>
         <div style={{display:'flex',gap:8}}>
@@ -129,7 +129,7 @@ export default function PaymentMethodsPage() {
       : methods.length===0 ? (
         <div style={{textAlign:'center',padding:'60px 20px',background:'#fff',borderRadius:20,border:'1.5px dashed #e2e8f0'}}>
           <div style={{fontSize:56,marginBottom:14,opacity:0.25}}>💳</div>
-          <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:18,color:'#475569',marginBottom:8}}>No payment methods yet</div>
+          <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:18,color:'#475569',marginBottom:8}}>No payment methods yet</div>
           <p style={{color:'#94a3b8',fontSize:14,marginBottom:16}}>Add payment methods like "Cash", "GPay", "Cash Counter 1", "Acc-1234"</p>
           <div style={{display:'flex',gap:10,justifyContent:'center',flexWrap:'wrap'}}>
             <button onClick={addPresets} style={{padding:'10px 20px',borderRadius:10,border:'1.5px solid #bfdbfe',background:'#eff6ff',color:'#2563eb',cursor:'pointer',fontSize:13,fontWeight:700}}>⚡ Add Default Methods</button>
@@ -173,9 +173,9 @@ export default function PaymentMethodsPage() {
       {/* Form modal */}
       {showForm&&(
         <div className="modal-overlay" onClick={()=>setShowForm(false)}>
-          <div onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:440,boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
+          <div className="modal" onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:440,boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0'}}>
             <div style={{padding:'20px 24px',borderBottom:'1px solid #e2e8f0',display:'flex',justifyContent:'space-between',alignItems:'center'}}>
-              <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:19,color:'#0f172a'}}>{editId?'✏️ Edit Method':'💳 Add Payment Method'}</div>
+              <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:19,color:'#0f172a'}}>{editId?'✏️ Edit Method':'💳 Add Payment Method'}</div>
               <button onClick={()=>setShowForm(false)} style={{width:32,height:32,borderRadius:'50%',border:'1.5px solid #e2e8f0',background:'#f8fafc',cursor:'pointer',display:'flex',alignItems:'center',justifyContent:'center',color:'#64748b',fontSize:18}}>✕</button>
             </div>
             <div style={{padding:'20px 24px',display:'flex',flexDirection:'column',gap:14}}>

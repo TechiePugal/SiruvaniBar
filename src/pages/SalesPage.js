@@ -141,7 +141,7 @@ export default function SalesPage() {
     <div className="page-container">
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 20 }}>
         <div>
-          <h1 style={{ fontFamily: 'Syne,sans-serif', fontWeight: 700, fontSize: 26, color: 'var(--text-primary)', margin: 0 }}>Sales Entry</h1>
+          <h1 style={{ fontFamily: 'Plus Jakarta Sans,sans-serif', fontWeight: 700, fontSize: 26, color: 'var(--text-primary)', margin: 0 }}>Sales Entry</h1>
           <p style={{ color: 'var(--text-secondary)', fontSize: 14, margin: '4px 0 0' }}>{format(new Date(), 'EEEE, d MMM yyyy')}</p>
         </div>
         <div style={{ display: 'flex', gap: 4, background: 'var(--surface)', borderRadius: 10, padding: 3, border: '1px solid var(--border)' }}>

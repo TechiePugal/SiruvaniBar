@@ -25,10 +25,13 @@ function AppLayout() {
   const { user, loading } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   if (loading) return (
-    <div style={{minHeight:'100vh',background:'#f0f4ff',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:16}}>
-      <div style={{width:64,height:64,borderRadius:20,background:'linear-gradient(135deg,#1d4ed8,#3b82f6)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:32,boxShadow:'0 8px 32px rgba(37,99,235,0.3)'}}>🍺</div>
-      <div className="spinner" style={{width:24,height:24}}/>
-      <p style={{color:'#64748b',fontSize:14,fontFamily:'DM Sans,sans-serif'}}>Loading…</p>
+    <div style={{minHeight:'100vh',minHeight:'100dvh',background:'linear-gradient(135deg,#0f2554,#1a3a87)',display:'flex',alignItems:'center',justifyContent:'center',flexDirection:'column',gap:18}}>
+      <div style={{width:68,height:68,borderRadius:22,background:'linear-gradient(135deg,#3b82f6,#60a5fa)',display:'flex',alignItems:'center',justifyContent:'center',fontSize:34,boxShadow:'0 8px 32px rgba(59,130,246,0.45)',animation:'pulse 1.6s ease infinite'}}>🍺</div>
+      <div style={{textAlign:'center'}}>
+        <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:20,color:'#fff',letterSpacing:'-0.3px',marginBottom:10}}>Siruvani POS</div>
+        <div className="spinner" style={{width:22,height:22,margin:'0 auto',borderColor:'rgba(255,255,255,0.2)',borderTopColor:'#fff'}}/>
+        <p style={{color:'rgba(255,255,255,0.6)',fontSize:13,fontFamily:'Inter,sans-serif',marginTop:14}}>Restoring your session…</p>
+      </div>
     </div>
   );
   if (!user) return <LoginPage />;
@@ -42,7 +45,7 @@ function AppLayout() {
             <span style={{width:12,height:2,background:'#fff',borderRadius:2,display:'block'}}/>
             <span style={{width:16,height:2,background:'#fff',borderRadius:2,display:'block'}}/>
           </button>
-          <span style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:17,color:'#fff'}}>🍺 Siruvani POS</span>
+          <span style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:16,color:'#fff',letterSpacing:'-0.2px'}}>🍺 Siruvani POS</span>
         </div>
         <div style={{flex:1,overflowY:'auto',overflowX:'hidden'}}>
           <Routes>
@@ -74,7 +77,7 @@ export default function App() {
     <Router>
       <AuthProvider>
         <AppLayout/>
-        <Toaster position="top-right" toastOptions={{duration:3500,style:{background:'#fff',color:'#0f172a',border:'1.5px solid #e2e8f0',borderRadius:'14px',fontSize:'14px',fontFamily:'DM Sans,sans-serif',boxShadow:'0 8px 32px rgba(15,23,42,0.12)'},success:{iconTheme:{primary:'#059669',secondary:'#fff'}},error:{iconTheme:{primary:'#dc2626',secondary:'#fff'}}}}/>
+        <Toaster position="top-center" toastOptions={{duration:3000,style:{background:'#fff',color:'#0d1b2e',border:'1px solid #e5e7eb',borderRadius:'14px',fontSize:'13.5px',fontWeight:500,fontFamily:'Inter,sans-serif',boxShadow:'0 8px 32px rgba(13,27,46,0.14)',padding:'12px 16px',maxWidth:'90vw'},success:{iconTheme:{primary:'#059669',secondary:'#fff'}},error:{iconTheme:{primary:'#dc2626',secondary:'#fff'}}}}/>
       </AuthProvider>
     </Router>
   );

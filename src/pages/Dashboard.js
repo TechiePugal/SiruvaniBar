@@ -251,7 +251,7 @@ export default function Dashboard() {
       </div>
 
       {/* ── Charts Row ── */}
-      <div style={{display:'grid',gridTemplateColumns:'2fr 1fr',gap:20,marginBottom:20}}>
+      <div className="chart-row" style={{display:'grid',gridTemplateColumns:'2fr 1fr',gap:20,marginBottom:20}}>
 
         {/* Revenue trend */}
         <div style={{background:'#fff',borderRadius:18,border:'1px solid #e5e7eb',padding:'22px 24px',boxShadow:'0 1px 4px rgba(13,27,46,0.05),0 2px 8px rgba(13,27,46,0.04)'}}>
@@ -323,7 +323,7 @@ export default function Dashboard() {
       </div>
 
       {/* ── Bottom Row ── */}
-      <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:20}}>
+      <div className="chart-row" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:20}}>
 
         {/* Recent invoices */}
         <div style={{background:'#fff',borderRadius:18,border:'1px solid #e5e7eb',overflow:'hidden',boxShadow:'0 1px 4px rgba(13,27,46,0.05),0 2px 8px rgba(13,27,46,0.04)'}}>

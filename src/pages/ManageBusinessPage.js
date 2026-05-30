@@ -55,7 +55,7 @@ export default function ManageBusinessPage() {
     <div className="page-container fade-in">
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:28,flexWrap:'wrap',gap:12}}>
         <div>
-          <h1 style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Manage Business</h1>
+          <h1 style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Manage Business</h1>
           <p style={{color:'#64748b',fontSize:14,margin:'3px 0 0'}}>Business profile, GSTIN, logo & contact details</p>
         </div>
         {isAdmin && <button className="btn-primary" onClick={handleSave} disabled={saving} style={{display:'flex',alignItems:'center',gap:8}}>
@@ -70,11 +70,11 @@ export default function ManageBusinessPage() {
         </div>
       )}
 
-      <div style={{display:'grid',gridTemplateColumns:'1fr 2fr',gap:24}}>
+      <div className="grid-2-collapse" style={{display:'grid',gridTemplateColumns:'1fr 2fr',gap:24}}>
         {/* Logo */}
         <div>
           <div style={{background:'#fff',borderRadius:20,border:'1.5px solid #e2e8f0',padding:'24px',textAlign:'center',boxShadow:'0 2px 10px rgba(15,23,42,0.05)'}}>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:15,color:'#0f172a',marginBottom:16}}>Business Logo</div>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:15,color:'#0f172a',marginBottom:16}}>Business Logo</div>
             <div style={{width:120,height:120,borderRadius:20,border:'2px dashed #bfdbfe',background:'#f0f9ff',margin:'0 auto 16px',display:'flex',alignItems:'center',justifyContent:'center',overflow:'hidden',cursor:'pointer'}} onClick={()=>isAdmin&&document.getElementById('logo-input').click()}>
               {form.logoURL ? <img src={form.logoURL} alt="Logo" style={{width:'100%',height:'100%',objectFit:'cover'}}/> : <div style={{textAlign:'center'}}><Building2 size={36} color="#bfdbfe"/><div style={{fontSize:11,color:'#94a3b8',marginTop:4}}>Click to upload</div></div>}
             </div>
@@ -92,7 +92,7 @@ export default function ManageBusinessPage() {
         <div style={{display:'flex',flexDirection:'column',gap:20}}>
           {/* Basic */}
           <div style={{background:'#fff',borderRadius:20,border:'1.5px solid #e2e8f0',padding:'24px',boxShadow:'0 2px 10px rgba(15,23,42,0.05)'}}>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:16,color:'#0f172a',marginBottom:18,display:'flex',alignItems:'center',gap:8}}><Building2 size={18} color="#2563eb"/> Basic Information</div>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:16,color:'#0f172a',marginBottom:18,display:'flex',alignItems:'center',gap:8}}><Building2 size={18} color="#2563eb"/> Basic Information</div>
             <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14}}>
               <div className="form-group" style={{gridColumn:'1/-1'}}>
                 <label className="form-label">Business Name *</label>
@@ -121,7 +121,7 @@ export default function ManageBusinessPage() {
 
           {/* Address */}
           <div style={{background:'#fff',borderRadius:20,border:'1.5px solid #e2e8f0',padding:'24px',boxShadow:'0 2px 10px rgba(15,23,42,0.05)'}}>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:16,color:'#0f172a',marginBottom:18,display:'flex',alignItems:'center',gap:8}}><MapPin size={18} color="#059669"/> Address</div>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:16,color:'#0f172a',marginBottom:18,display:'flex',alignItems:'center',gap:8}}><MapPin size={18} color="#059669"/> Address</div>
             <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14}}>
               <div className="form-group" style={{gridColumn:'1/-1'}}>
                 <label className="form-label">Street Address</label>
@@ -144,7 +144,7 @@ export default function ManageBusinessPage() {
 
           {/* Compliance */}
           <div style={{background:'#fff',borderRadius:20,border:'1.5px solid #e2e8f0',padding:'24px',boxShadow:'0 2px 10px rgba(15,23,42,0.05)'}}>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:16,color:'#0f172a',marginBottom:18,display:'flex',alignItems:'center',gap:8}}><FileText size={18} color="#7c3aed"/> Tax & Compliance</div>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:16,color:'#0f172a',marginBottom:18,display:'flex',alignItems:'center',gap:8}}><FileText size={18} color="#7c3aed"/> Tax & Compliance</div>
             <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:14}}>
               <div className="form-group">
                 <label className="form-label">GSTIN</label>

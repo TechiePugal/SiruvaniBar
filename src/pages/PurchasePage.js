@@ -50,7 +50,7 @@ function ItemSearch({ value, invItems, onSelect }) {
           onFocus={()=>setOpen(true)}
           onBlur={()=>setTimeout(()=>setOpen(false),180)}
           placeholder="Search inventory item…"
-          style={{width:'100%',padding:'9px 10px 9px 30px',border:'1.5px solid #e2e8f0',borderRadius:10,fontSize:13.5,outline:'none',color:'#0f172a',fontFamily:'DM Sans,sans-serif',background:'#fff'}}
+          style={{width:'100%',padding:'9px 10px 9px 30px',border:'1.5px solid #e2e8f0',borderRadius:10,fontSize:13.5,outline:'none',color:'#0f172a',fontFamily:'Inter,sans-serif',background:'#fff'}}
         />
       </div>
       {open && (
@@ -103,7 +103,7 @@ function VendorSearch({ value, vendors, onChange }) {
           onFocus={()=>setOpen(true)}
           onBlur={()=>setTimeout(()=>setOpen(false),180)}
           placeholder="Type or select vendor…"
-          style={{width:'100%',padding:'10px 12px 10px 36px',border:'1.5px solid #e2e8f0',borderRadius:10,fontSize:14,outline:'none',color:'#0f172a',fontFamily:'DM Sans,sans-serif',fontWeight:600}}
+          style={{width:'100%',padding:'10px 12px 10px 36px',border:'1.5px solid #e2e8f0',borderRadius:10,fontSize:14,outline:'none',color:'#0f172a',fontFamily:'Inter,sans-serif',fontWeight:600}}
         />
       </div>
       {open && (
@@ -192,10 +192,10 @@ function PaymentModal({ purchase, shopId, payMethods, onClose }) {
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:480,boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0',overflow:'hidden'}}>
+      <div className="modal" onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:480,boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0',overflow:'hidden'}}>
         {/* Gradient header */}
         <div style={{background:'linear-gradient(135deg,#d97706,#f59e0b)',padding:'20px 24px'}}>
-          <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:18,color:'#fff'}}>💳 Record Payment</div>
+          <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:18,color:'#fff'}}>💳 Record Payment</div>
           <div style={{fontSize:13,color:'rgba(255,255,255,0.85)',marginTop:3}}>
             {purchase.vendorName} {purchase.invoiceNo?`· ${purchase.invoiceNo}`:''}
           </div>
@@ -211,7 +211,7 @@ function PaymentModal({ purchase, shopId, payMethods, onClose }) {
             ].map(k=>(
               <div key={k.label} style={{textAlign:'center',padding:'10px 8px',background:'#f8fafc',borderRadius:12,border:'1.5px solid #e2e8f0'}}>
                 <div style={{fontSize:10,color:'#64748b',fontWeight:700,textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:4}}>{k.label}</div>
-                <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:15,color:k.color}}>{moneyShort(k.val)}</div>
+                <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:15,color:k.color}}>{moneyShort(k.val)}</div>
               </div>
             ))}
           </div>
@@ -398,12 +398,12 @@ function PurchaseForm({ initial, vendors, invItems, payMethods, shopId, user, on
 
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:800,maxHeight:'95vh',overflowY:'auto',boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0',display:'flex',flexDirection:'column'}}>
+      <div className="modal" onClick={e=>e.stopPropagation()} style={{background:'#fff',borderRadius:24,width:'100%',maxWidth:800,maxHeight:'95vh',overflowY:'auto',boxShadow:'0 20px 60px rgba(15,23,42,0.18)',border:'1.5px solid #e2e8f0',display:'flex',flexDirection:'column'}}>
 
         {/* Sticky header */}
         <div style={{padding:'18px 24px',borderBottom:'1px solid #e2e8f0',display:'flex',alignItems:'center',justifyContent:'space-between',position:'sticky',top:0,background:'#fff',zIndex:20}}>
           <div>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:20,color:'#0f172a'}}>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:20,color:'#0f172a'}}>
               {isEdit?'✏️ Edit Purchase':'🛍️ New Purchase'}
             </div>
             <div style={{fontSize:12.5,color:'#64748b',marginTop:2}}>
@@ -489,7 +489,7 @@ function PurchaseForm({ initial, vendors, invItems, payMethods, shopId, user, on
           </div>
 
           {/* Bill total + payment */}
-          <div style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,marginBottom:20}}>
+          <div className="grid-2-collapse" style={{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16,marginBottom:20}}>
             {/* Payment */}
             <div style={{background:'#f8faff',borderRadius:14,padding:'16px 18px',border:'1.5px solid #e0e7ff'}}>
               <div style={{fontSize:12,fontWeight:700,color:'#475569',textTransform:'uppercase',letterSpacing:'0.04em',marginBottom:14}}>💳 Initial Payment {isEdit?'(read-only)':''}</div>
@@ -523,7 +523,7 @@ function PurchaseForm({ initial, vendors, invItems, payMethods, shopId, user, on
               ].map(r=>(
                 <div key={r.label} style={{display:'flex',justifyContent:'space-between',padding:'7px 0',borderBottom:'1px solid #fef3c7'}}>
                   <span style={{color:'#92400e',fontWeight:r.bold?700:500,fontSize:14}}>{r.label}</span>
-                  <span style={{fontWeight:800,color:r.color,fontSize:r.bold?17:14,fontFamily:r.bold?'Syne,sans-serif':'inherit'}}>{money(r.val)}</span>
+                  <span style={{fontWeight:800,color:r.color,fontSize:r.bold?17:14,fontFamily:r.bold?'Plus Jakarta Sans,sans-serif':'inherit'}}>{money(r.val)}</span>
                 </div>
               ))}
               <div style={{marginTop:10,padding:'8px 12px',borderRadius:9,background:remaining<=0.01?'#ecfdf5':'#fef2f2',border:`1px solid ${remaining<=0.01?'#a7f3d0':'#fecaca'}`,textAlign:'center',fontWeight:700,fontSize:13,color:remaining<=0.01?'#059669':'#dc2626'}}>
@@ -606,7 +606,7 @@ export default function PurchasePage() {
       {/* Header */}
       <div style={{display:'flex',alignItems:'center',justifyContent:'space-between',marginBottom:24,flexWrap:'wrap',gap:12}}>
         <div>
-          <h1 style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Purchases</h1>
+          <h1 style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:28,color:'#0f172a',margin:0}}>Purchases</h1>
           <p style={{color:'#64748b',fontSize:14,margin:'3px 0 0'}}>Vendor purchases — stock auto-updated, payment tracking</p>
         </div>
         <button className="btn-primary" onClick={()=>{setEditItem(null);setShowForm(true);}} style={{display:'flex',alignItems:'center',gap:8,background:'#d97706',boxShadow:'0 4px 14px rgba(217,119,6,0.3)'}}>
@@ -631,7 +631,7 @@ export default function PurchasePage() {
               <div style={{fontSize:11,fontWeight:700,color:'#64748b',textTransform:'uppercase',letterSpacing:'0.05em'}}>{k.label}</div>
               <div style={{width:30,height:30,borderRadius:9,background:k.bg,display:'flex',alignItems:'center',justifyContent:'center',fontSize:16}}>{k.icon}</div>
             </div>
-            <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:22,color:k.color}}>
+            <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:22,color:k.color}}>
               {k.isCnt?k.val:moneyShort(k.val)}
             </div>
           </div>
@@ -666,7 +666,7 @@ export default function PurchasePage() {
       ) : filtered.length===0 ? (
         <div style={{textAlign:'center',padding:'60px 20px',background:'#fff',borderRadius:20,border:'1.5px dashed #e2e8f0'}}>
           <div style={{fontSize:56,opacity:0.2,marginBottom:14}}>🛍️</div>
-          <div style={{fontFamily:'Syne,sans-serif',fontWeight:700,fontSize:18,color:'#475569',marginBottom:8}}>
+          <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:700,fontSize:18,color:'#475569',marginBottom:8}}>
             {search?`No results for "${search}"`:'No purchases yet'}
           </div>
           <button className="btn-primary" onClick={()=>setShowForm(true)} style={{display:'inline-flex',alignItems:'center',gap:8,marginTop:4,background:'#d97706',boxShadow:'0 4px 14px rgba(217,119,6,0.3)'}}><Plus size={14}/>New Purchase</button>
@@ -705,16 +705,16 @@ export default function PurchasePage() {
                     <div style={{display:'flex',gap:20,alignItems:'center',flexWrap:'wrap'}}>
                       <div style={{textAlign:'center',minWidth:70}}>
                         <div style={{fontSize:10,fontWeight:700,color:'#94a3b8',textTransform:'uppercase',marginBottom:2}}>Total</div>
-                        <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:17,color:'#0f172a'}}>{moneyShort(p.totalAmount)}</div>
+                        <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:17,color:'#0f172a'}}>{moneyShort(p.totalAmount)}</div>
                       </div>
                       <div style={{textAlign:'center',minWidth:70}}>
                         <div style={{fontSize:10,fontWeight:700,color:'#94a3b8',textTransform:'uppercase',marginBottom:2}}>Paid</div>
-                        <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:17,color:'#059669'}}>{moneyShort(p.paidAmount||0)}</div>
+                        <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:17,color:'#059669'}}>{moneyShort(p.paidAmount||0)}</div>
                       </div>
                       {(p.remainingAmount||0)>0.01&&(
                         <div style={{textAlign:'center',minWidth:70}}>
                           <div style={{fontSize:10,fontWeight:700,color:'#94a3b8',textTransform:'uppercase',marginBottom:2}}>Due</div>
-                          <div style={{fontFamily:'Syne,sans-serif',fontWeight:800,fontSize:17,color:'#dc2626'}}>{moneyShort(p.remainingAmount)}</div>
+                          <div style={{fontFamily:'Plus Jakarta Sans,sans-serif',fontWeight:800,fontSize:17,color:'#dc2626'}}>{moneyShort(p.remainingAmount)}</div>
                         </div>
                       )}
                     </div>
